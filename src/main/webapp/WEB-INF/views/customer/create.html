@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<head>
+
+    <title>Index Control Panel</title>
+    <th:block th:replace="/layout/head :: style-meta" />
+
+    <th:block th:replace="/layout/head :: style-app" />
+
+</head>
+
+<body>
+
+<!-- Begin page -->
+<div id="wrapper">
+
+
+    <!-- Topbar Start -->
+    <th:block th:replace="/layout/navbar-custom" />
+    <!-- end Topbar -->
+
+
+    <!-- ========== Left Sidebar Start ========== -->
+    <th:block th:replace="/layout/left-side-menu" />
+    <!-- Left Sidebar End -->
+
+    <!-- ============================================================== -->
+    <!-- Start Page Content here -->
+    <!-- ============================================================== -->
+
+    <div class="content-page">
+
+            <div class="col-lg-12">
+                <div class="mt-5">
+                    <h6 class="header-title mb-3">Create Customer</h6>
+                    <div class="">
+                        <form action="#" class="form-validation">
+                            <div class="form-group">
+                                <label for="userName">User Name<span class="text-danger">*</span></label>
+                                <input type="text" name="nick" parsley-trigger="change" required="" placeholder="Enter user name" class="form-control" id="userName">
+                            </div>
+                            <div class="form-group">
+                                <label for="emailAddress">Email address<span class="text-danger">*</span></label>
+                                <input type="email" name="email" parsley-trigger="change" required="" placeholder="Enter email" class="form-control" id="emailAddress">
+                            </div>
+                            <div class="form-group">
+                                <label for="pass1">Password<span class="text-danger">*</span></label>
+                                <input id="pass1" type="password" placeholder="Password" required="" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="passWord2">Confirm Password <span class="text-danger">*</span></label>
+                                <input data-parsley-equalto="#pass1" type="password" required="" placeholder="Password" class="form-control" id="passWord2">
+                            </div>
+                            <div class="form-group">
+                                <div class="checkbox checkbox-primary">
+                                    <input id="remember-1" type="checkbox">
+                                    <label for="remember-1"> Remember me </label>
+                                </div>
+                            </div>
+
+                            <div class="form-group text-right mb-3">
+                                <button class="btn btn-primary waves-effect waves-light mr-1" type="submit">
+                                    Submit
+                                </button>
+                                <button type="reset" class="btn btn-danger waves-effect">
+                                    Cancel
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+    </div>
+
+
+</div>
+<!-- end container-fluid -->
+
+</div>
+
+<!-- Footer Start -->
+<th:block th:replace="/layout/footer" />
+<!-- end Footer -->
+
+
+<!-- Right Sidebar -->
+<th:block th:replace="/layout/right-bar" />
+<!-- /Right-bar -->
+
+<!-- Right bar overlay-->
+<div class="rightbar-overlay"></div>
+
+<a href="javascript:void(0);" class="right-bar-toggle demos-show-btn">
+    <i class="mdi mdi-settings-outline mdi-spin"></i> &nbsp;Choose Demos
+</a>
+
+<th:block th:replace="/layout/script :: script-vendor"/>
+
+<th:block th:replace="/layout/script :: script-app"/>
+
+</body>
+</html>
